@@ -575,19 +575,21 @@ section {
 }
 
 .features-list {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    flex-wrap: wrap;
     gap: 1rem;
     margin-top: 2rem;
+    justify-content: flex-start;
 }
 
 .feature-badge {
     background: var(--secondary);
     color: var(--white);
-    padding: 1rem;
+    padding: 0.8rem 1.5rem;
     border-radius: 25px;
     text-align: center;
     font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .contact-form-wrapper {
