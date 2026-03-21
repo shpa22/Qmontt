@@ -43,6 +43,7 @@ body {
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
+    flex-direction: row-reverse;
 }
 
 .logo img {
