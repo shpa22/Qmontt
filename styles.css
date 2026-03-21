@@ -287,6 +287,12 @@ section {
     gap: 2rem;
 }
 
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 .product-card {
     background: var(--light);
     padding: 2.5rem;
