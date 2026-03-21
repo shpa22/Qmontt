@@ -81,10 +81,11 @@ body {
 .nav-cta {
     background: var(--secondary);
     color: var(--white);
-    padding: 0.8rem 2rem;
+    padding: 0.6rem 1.5rem;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.9rem;
     transition: all 0.3s;
     margin-left: 3rem;
 }
@@ -156,10 +157,11 @@ body {
     display: inline-block;
     background: var(--secondary);
     color: var(--white);
-    padding: 1rem 2.5rem;
+    padding: 0.8rem 2rem;
     border-radius: 25px;
     text-decoration: none;
     font-weight: 600;
+    font-size: 0.95rem;
     transition: all 0.3s;
     animation: fadeInUp 1s ease 0.4s backwards;
 }
