@@ -55,7 +55,7 @@ body {
     display: flex;
     gap: 2rem;
     list-style: none;
-    align-items: center;
+    align-items: right;
     margin-left: auto;
 }
 
