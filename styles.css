@@ -97,11 +97,9 @@ body {
 
 /* Hero Section */
 .hero {
-       height: 100vh;
-       background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                   url('hero-bg.jpg.jpg') center/cover;
-       display: flex;
-       align-items: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                url(hero-bg.jpg.jpg) center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
