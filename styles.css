@@ -44,7 +44,11 @@ body {
     max-width: 1400px;
     margin: 0 auto;
 }
-
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
 .logo img {
     height: 50px;
     width: auto;
