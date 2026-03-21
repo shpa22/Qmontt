@@ -55,7 +55,10 @@ body {
     gap: 2rem;
     list-style: none;
     align-items: center;
-    margin-right: 2rem;
+}
+
+.nav-menu + .nav-cta {
+    margin-left: 3rem;
 }
 
 .nav-menu a {
