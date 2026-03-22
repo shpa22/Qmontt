@@ -49,11 +49,15 @@
         }
         
         .content-row.reverse {
-            direction: rtl;
+            grid-template-columns: 1fr 1fr;
         }
         
-        .content-row.reverse > * {
-            direction: ltr;
+        .content-row.reverse .content-text {
+            order: 2;
+        }
+        
+        .content-row.reverse .content-image-wrapper {
+            order: 1;
         }
         
         .content-image {
@@ -68,29 +72,26 @@
             font-size: 2.5rem;
             color: var(--dark);
             margin-bottom: 1.5rem;
-            text-align: center;
         }
         
         .content-text p {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text);
-            text-align: center;
         }
         
         .mission-box, .vision-box {
             background: var(--light);
-            padding: 3rem;
+            padding: 2.5rem;
             border-left: 5px solid var(--secondary);
             border-radius: 10px;
             font-style: italic;
             font-size: 1.2rem;
             line-height: 1.8;
-            text-align: center;
         }
         
         .final-quote {
-            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
             padding: 4rem 2rem;
             text-align: center;
             margin-top: 6rem;
@@ -101,22 +102,16 @@
             font-weight: 800;
             margin-bottom: 1rem;
             line-height: 1.3;
-        }
-        
-        .final-quote .line1 {
             color: white;
         }
         
-        .final-quote .line2 {
-            color: #1f2937;
-        }
-        
         @media (max-width: 768px) {
-            .content-row {
+            .content-row, .content-row.reverse {
                 grid-template-columns: 1fr;
             }
-            .content-row.reverse {
-                direction: ltr;
+            .content-row.reverse .content-text,
+            .content-row.reverse .content-image-wrapper {
+                order: 0;
             }
             .page-hero h1 {
                 font-size: 2.5rem;
@@ -141,68 +136,3 @@
                 <ul class="nav-menu">
                     <li><a href="index.html">HOME</a></li>
                     <li><a href="about.html" class="active">About</a></li>
-                    <li><a href="products.html">Products</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <a href="contact.html" class="nav-cta">GET A QUOTE</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <div class="page-hero">
-        <h1>About Qmontt AB</h1>
-    </div>
-
-    <!-- Main Content -->
-    <section style="padding: 6rem 0;">
-        <div class="container">
-            <!-- Main Heading -->
-            <h2 class="main-heading">Finding a Solution is Our Ultimate Goal</h2>
-            
-            <!-- Intro Paragraph -->
-            <p class="intro-text">
-                Qmontt AB is a Sweden-based consultancy and sourcing partner dedicated to helping international manufacturers succeed in Europe. We specialize in connecting innovative products and reliable industrial components with the right customers, distributors, and OEMs across the Nordic and European markets.
-            </p>
-
-            <!-- Our Story with Image -->
-            <div class="content-row">
-                <div class="content-text">
-                    <h2>Our Story</h2>
-                    <p>Founded with a vision to simplify global trade, Qmontt was created to make market entry seamless for high-potential companies. Our roots span across diverse industries—from advanced vehicle components and accessories to precision castings and forgings—giving us the expertise to deliver solutions that meet European standards and customer expectations.</p>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800" alt="Our Story" class="content-image">
-                </div>
-            </div>
-
-            <!-- Our Mission with Image (Reversed) -->
-            <div class="content-row reverse">
-                <div class="content-text">
-                    <h2>Our Mission</h2>
-                    <div class="mission-box">
-                        "To be the trusted partner that keeps our customers ahead by turning challenges into innovative, high-value solutions delivered through reliable global suppliers."
-                    </div>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800" alt="Our Mission" class="content-image">
-                </div>
-            </div>
-
-            <!-- Our Vision with Image -->
-            <div class="content-row">
-                <div class="content-text">
-                    <h2>Our Vision</h2>
-                    <div class="vision-box">
-                        "To be consistent and reliable partner delivering sustainable, customer-focused solutions."
-                    </div>
-                </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800" alt="Our Vision" class="content-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final Quote Banner -->
-    <section class="final-quote">
