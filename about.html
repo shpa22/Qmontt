@@ -21,37 +21,112 @@
             font-size: 4rem;
             font-weight: 800;
         }
-        .about-content {
-            max-width: 900px;
-            margin: 0 auto;
+        
+        .main-heading {
+            font-size: 3rem;
+            text-align: center;
+            color: var(--dark);
+            margin-bottom: 2rem;
         }
-        .about-intro {
+        
+        .intro-text {
             text-align: center;
             font-size: 1.2rem;
             line-height: 1.8;
-            margin-bottom: 4rem;
+            margin-bottom: 5rem;
             color: var(--text);
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
         }
-        .story-section, .mission-section, .vision-section {
-            margin-bottom: 4rem;
+        
+        .content-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 5rem;
         }
-        .story-section h2, .mission-section h2, .vision-section h2 {
+        
+        .content-row.reverse {
+            direction: rtl;
+        }
+        
+        .content-row.reverse > * {
+            direction: ltr;
+        }
+        
+        .content-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .content-text h2 {
             font-size: 2.5rem;
             color: var(--dark);
             margin-bottom: 1.5rem;
+            text-align: center;
         }
-        .story-section p, .mission-section p, .vision-section p {
+        
+        .content-text p {
             font-size: 1.1rem;
             line-height: 1.8;
             color: var(--text);
+            text-align: center;
         }
-        .mission-section p, .vision-section p {
-            font-style: italic;
-            font-size: 1.3rem;
-            padding: 2rem;
+        
+        .mission-box, .vision-box {
             background: var(--light);
-            border-left: 4px solid var(--secondary);
-            border-radius: 8px;
+            padding: 3rem;
+            border-left: 5px solid var(--secondary);
+            border-radius: 10px;
+            font-style: italic;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            text-align: center;
+        }
+        
+        .final-quote {
+            background: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            margin-top: 6rem;
+        }
+        
+        .final-quote h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .final-quote .line1 {
+            color: white;
+        }
+        
+        .final-quote .line2 {
+            color: #1f2937;
+        }
+        
+        @media (max-width: 768px) {
+            .content-row {
+                grid-template-columns: 1fr;
+            }
+            .content-row.reverse {
+                direction: ltr;
+            }
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+            .main-heading {
+                font-size: 2rem;
+            }
+            .final-quote h2 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
@@ -82,94 +157,52 @@
     <!-- Main Content -->
     <section style="padding: 6rem 0;">
         <div class="container">
-            <div class="about-content">
-                <!-- Main Heading -->
-                <h2 style="font-size: 3rem; text-align: center; color: var(--dark); margin-bottom: 2rem;">Finding a Solution is Our Ultimate Goal</h2>
-                
-                <!-- Intro Paragraph -->
-                <p class="about-intro">
-                    Qmontt AB is a Sweden-based consultancy and sourcing partner dedicated to helping international manufacturers succeed in Europe. We specialize in connecting innovative products and reliable industrial components with the right customers, distributors, and OEMs across the Nordic and European markets.
-                </p>
+            <!-- Main Heading -->
+            <h2 class="main-heading">Finding a Solution is Our Ultimate Goal</h2>
+            
+            <!-- Intro Paragraph -->
+            <p class="intro-text">
+                Qmontt AB is a Sweden-based consultancy and sourcing partner dedicated to helping international manufacturers succeed in Europe. We specialize in connecting innovative products and reliable industrial components with the right customers, distributors, and OEMs across the Nordic and European markets.
+            </p>
 
-                <!-- Our Story -->
-                <div class="story-section">
+            <!-- Our Story with Image -->
+            <div class="content-row">
+                <div class="content-text">
                     <h2>Our Story</h2>
                     <p>Founded with a vision to simplify global trade, Qmontt was created to make market entry seamless for high-potential companies. Our roots span across diverse industries—from advanced vehicle components and accessories to precision castings and forgings—giving us the expertise to deliver solutions that meet European standards and customer expectations.</p>
                 </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800" alt="Our Story" class="content-image">
+                </div>
+            </div>
 
-                <!-- Our Mission -->
-                <div class="mission-section">
+            <!-- Our Mission with Image (Reversed) -->
+            <div class="content-row reverse">
+                <div class="content-text">
                     <h2>Our Mission</h2>
-                    <p>"To be the trusted partner that keeps our customers ahead by turning challenges into innovative, high-value solutions delivered through reliable global suppliers."</p>
+                    <div class="mission-box">
+                        "To be the trusted partner that keeps our customers ahead by turning challenges into innovative, high-value solutions delivered through reliable global suppliers."
+                    </div>
                 </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800" alt="Our Mission" class="content-image">
+                </div>
+            </div>
 
-                <!-- Our Vision -->
-                <div class="vision-section">
+            <!-- Our Vision with Image -->
+            <div class="content-row">
+                <div class="content-text">
                     <h2>Our Vision</h2>
-                    <p>"To be consistent and reliable partner delivering sustainable, customer-focused solutions."</p>
+                    <div class="vision-box">
+                        "To be consistent and reliable partner delivering sustainable, customer-focused solutions."
+                    </div>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800" alt="Our Vision" class="content-image">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section class="team-section">
-        <div class="container">
-            <div class="section-header center">
-                <h2>Team Members</h2>
-                <p>Behind Qmontt is a team of experienced professionals who understand both the technical and commercial realities of global manufacturing and sourcing.</p>
-            </div>
-
-            <div class="team-grid">
-                <div class="team-card">
-                    <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/Picture-1.png" alt="Shrikant Patil">
-                    <h4>Shrikant Patil</h4>
-                    <p>Engineering & Operations</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/Picture-01.png" alt="Rodrigo Andrés Rivera">
-                    <h4>Rodrigo Andrés Rivera</h4>
-                    <p>Engineering & Quality</p>
-                </div>
-
-                <div class="team-card">
-                    <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/Picture-10.png" alt="Vinay Rajashekar">
-                    <h4>Vinay Rajashekar</h4>
-                    <p>CEO & Sales</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/WhatsApp_Image_2026-02-10_at_16.39.26-2-removebg-preview.png" alt="Qmontt Logo" class="footer-logo">
-                    <p>Solutions Designed Around Your Needs</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Useful Links</h4>
-                    <ul>
-                        <li><a href="about.html">About us</a></li>
-                        <li><a href="products.html">Products</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Information</h4>
-                    <p>Sågverksvagen 3, Södertälje 15255, Sweden</p>
-                    <p>+46 764 597 932</p>
-                    <p>info@qmontt.com</p>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>Copyright © 2026 Qmontt | All rights reserved</p>
-            </div>
-        </div>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
+    <!-- Final Quote Banner -->
+    <section class="final-quote">
