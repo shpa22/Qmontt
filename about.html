@@ -171,31 +171,35 @@
                 </div>
             </div>
 
-            <!-- Our Mission with Image (Reversed) -->
-            <div class="content-row reverse">
-                <div class="content-text">
-                    <h2>Our Mission</h2>
-                    <div class="mission-box">
-                        "To be the trusted partner that keeps our customers ahead by turning challenges into innovative, high-value solutions delivered through reliable global suppliers."
-                    </div>
-                </div>
-                <div class="content-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800" alt="Team Collaboration" class="content-image">
-                </div>
-            </div>
+          <!-- Mission & Vision Side by Side -->
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 5rem;">
+    <!-- Our Mission -->
+    <div style="background: var(--light); padding: 3rem; border-radius: 15px; text-align: center;">
+        <div style="font-size: 4rem; margin-bottom: 1.5rem;">🎯</div>
+        <h2 style="font-size: 2.5rem; color: var(--dark); margin-bottom: 1.5rem;">Our Mission</h2>
+        <div style="background: white; padding: 2rem; border-left: 5px solid var(--secondary); border-radius: 10px; font-style: italic; font-size: 1.1rem; line-height: 1.8; text-align: left;">
+            "To be the trusted partner that keeps our customers ahead by turning challenges into innovative, high-value solutions delivered through reliable global suppliers."
+        </div>
+    </div>
 
-            <!-- Our Vision with Image -->
-            <div class="content-row">
-                <div class="content-text">
-                    <h2>Our Vision</h2>
-                    <div class="vision-box">
-                        "To be consistent and reliable partner delivering sustainable, customer-focused solutions."
-                    </div>
-                </div>
-                <div class="content-image-wrapper">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800" alt="Business Growth" class="content-image">
-                </div>
-            </div>
+    <!-- Our Vision -->
+    <div style="background: var(--light); padding: 3rem; border-radius: 15px; text-align: center;">
+        <div style="font-size: 4rem; margin-bottom: 1.5rem;">👁️</div>
+        <h2 style="font-size: 2.5rem; color: var(--dark); margin-bottom: 1.5rem;">Our Vision</h2>
+        <div style="background: white; padding: 2rem; border-left: 5px solid var(--secondary); border-radius: 10px; font-style: italic; font-size: 1.1rem; line-height: 1.8; text-align: left;">
+            "To be consistent and reliable partner delivering sustainable, customer-focused solutions."
+        </div>
+    </div>
+</div>
+
+<!-- Responsive for mobile -->
+<style>
+@media (max-width: 768px) {
+    section div[style*="grid-template-columns: 1fr 1fr"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+</style>
         </div>
     </section>
 <!-- What We Do Section -->
