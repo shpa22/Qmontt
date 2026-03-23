@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forging Solutions | Qmontt AB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero {
+            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                        url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1600') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 82px;
+        }
+
+        .page-hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+        }
+
+        .content-section {
+            padding: 6rem 0;
+        }
+
+        .content-block {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-bottom: 2.5rem;
+        }
+
+        .content-block h2 {
+            font-size: 2.4rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .content-block h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin: 2rem 0 1rem;
+        }
+
+        .content-block p,
+        .content-block li {
+            font-size: 1.08rem;
+            line-height: 1.85;
+            color: var(--text);
+        }
+
+        .content-block ul {
+            margin: 1rem 0 0 1.25rem;
+        }
+
+        .content-block li {
+            margin-bottom: 0.9rem;
+        }
+
+        .content-block strong {
+            color: var(--dark);
+        }
+
+        .intro-subtitle {
+            font-size: 1.35rem;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+
+        .forging-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2.5rem 0 3rem;
+        }
+
+        .forging-gallery img {
+            width: 100%;
+            height: 270px;
+            object-fit: cover;
+            border-radius: 12px;
+        }
+
+        .highlight-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .highlight-item {
+            background: white;
+            border-left: 4px solid var(--secondary);
+            padding: 1.5rem;
+            border-radius: 10px;
+        }
+
+        .highlight-item h4 {
+            font-size: 1.1rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-strip {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 18px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .cta-strip h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-strip p {
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        @media (max-width: 900px) {
+            .forging-gallery,
+            .highlight-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                margin-top: 74px;
+            }
+
+            .page-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .content-block,
+            .cta-strip {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/WhatsApp_Image_2026-02-10_at_16.39.26-2-removebg-preview.png" alt="Qmontt Logo">
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="nav-cta">GET A QUOTE</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="page-hero">
+        <h1>Forging</h1>
+    </div>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-block">
+                <h2>Certified Forging Solutions</h2>
+                <p class="intro-subtitle">Closed-die hot steel forgings for European OEMs and industrial buyers</p>
+                <p>Qmontt AB supplies premium forging solutions to customers across Sweden and Europe through a trusted network of qualified global manufacturing partners. Our focus is on dependable forged components that deliver high strength, structural integrity, and long service life in demanding industrial applications.</p>
+                <p>We support customers from inquiry and process selection through tooling, sample validation, serial production, machining, and delivery coordination. The result is a sourcing model built around technical confidence, transparency, and practical execution.</p>
+            </div>
+
+            <div class="forging-gallery">
+                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=900" alt="Forging process">
+                <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=900" alt="Industrial forged components">
+                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=900" alt="Precision manufacturing">
+            </div>
+
+            <div class="content-block">
+                <h2>Process Capabilities</h2>
+                <ul>
+                    <li><strong>Closed-die hot forging</strong> for repeatable production of robust, high-strength steel components.</li>
+                    <li><strong>Tooling and die development</strong> aligned with part geometry, production volumes, and cost targets.</li>
+                    <li><strong>Heat treatment support</strong> to achieve the mechanical properties required for demanding applications.</li>
+                    <li><strong>Machining and finishing</strong> for semi-finished or assembly-ready deliveries.</li>
+                    <li><strong>Quality documentation and traceability</strong> to support customer approval and production confidence.</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h2>Why Forging</h2>
+                <p>Forging improves grain flow and internal strength, making it one of the most reliable manufacturing methods for safety-critical and high-load components. Compared with alternative routes, forged parts often provide better fatigue resistance, impact strength, and structural consistency.</p>
+                <div class="highlight-grid">
+                    <div class="highlight-item">
+                        <h4>Higher Strength</h4>
+                        <p>Improved grain structure and compact material flow for demanding mechanical loads.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Dimensional Consistency</h4>
+                        <p>Stable repeatability across production batches with controlled process parameters.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Reliable Performance</h4>
+                        <p>Excellent fatigue and impact resistance for long-life industrial components.</p>
+                    </div>
+                    <div class="highlight-item">
+                        <h4>Production Scalability</h4>
+                        <p>Well suited for serial production programs once tooling and validation are completed.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-block">
+                <h2>Applications We Support</h2>
+                <ul>
+                    <li><strong>Automotive:</strong> drivetrain parts, suspension components, brackets, hubs, yokes, and structural parts.</li>
+                    <li><strong>Agricultural machinery:</strong> durable load-bearing parts for field equipment and mechanical systems.</li>
+                    <li><strong>Industrial equipment:</strong> forged parts for machines operating under repeated stress and harsh conditions.</li>
+                    <li><strong>Energy and infrastructure:</strong> components where reliability, consistency, and long-term durability are essential.</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h2>Quality, Validation & Delivery Support</h2>
+                <p>Qmontt works with vetted suppliers that follow disciplined manufacturing and inspection routines. Depending on the program, support can include material certification, dimensional validation, process control records, and coordinated communication throughout sourcing and delivery.</p>
+                <p>We aim to give customers a practical one-stop route: forging partner selection, technical follow-up, production planning, and dependable delivery to European expectations.</p>
+            </div>
+
+            <div class="cta-strip">
+                <h2>Need a Forging Partner for Europe?</h2>
+                <p>Share your drawings, material requirements, annual volumes, and target application. Qmontt can help evaluate the right forging route and connect you with a reliable manufacturing solution.</p>
+                <a href="contact.html" class="btn-white">Request a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/WhatsApp_Image_2026-02-10_at_16.39.26-2-removebg-preview.png" alt="Qmontt Logo" class="footer-logo">
+                    <p>Solutions Designed Around Your Needs</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Information</h4>
+                    <p>Sågverksvagen 3, Södertälje 15255, Sweden</p>
+                    <p>+46 764 597 932</p>
+                    <p>info@qmontt.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2026 Qmontt | All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
