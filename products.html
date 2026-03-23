@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products | Qmontt AB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero {
+            min-height: 66vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.56), rgba(0,0,0,0.56)),
+                url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1600') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 82px;
+        }
+
+        .hero-inner {
+            max-width: 920px;
+            padding: 2rem;
+        }
+
+        .hero-inner h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .hero-inner .hero-lead {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            max-width: 780px;
+            margin: 0 auto 1rem;
+            opacity: 0.95;
+        }
+
+        .hero-inner .hero-sub {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            max-width: 800px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.88);
+        }
+
+        .products-intro {
+            padding: 5rem 0 2rem;
+            background: var(--white);
+        }
+
+        .intro-box {
+            background: var(--light);
+            border-radius: 18px;
+            padding: 2.5rem;
+            max-width: 980px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .intro-box h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .intro-box p {
+            font-size: 1.08rem;
+            line-height: 1.9;
+            color: var(--text);
+        }
+
+        .products-section-custom {
+            padding: 2rem 0 6rem;
+            background: var(--white);
+        }
+
+        .products-grid-custom {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card-custom {
+            position: relative;
+            display: block;
+            min-height: 320px;
+            border-radius: 20px;
+            overflow: hidden;
+            text-decoration: none;
+            color: white;
+            background: #111827;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.14);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .product-card-custom:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 24px 50px rgba(0,0,0,0.22);
+        }
+
+        .product-card-custom.featured {
+            grid-column: span 2;
+            min-height: 360px;
+        }
+
+        .product-card-custom .card-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transform: scale(1.02);
+            transition: transform 0.4s ease;
+        }
+
+        .product-card-custom:hover .card-bg {
+            transform: scale(1.08);
+        }
+
+        .product-card-custom .card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(8,15,35,0.16) 0%, rgba(8,15,35,0.82) 72%, rgba(8,15,35,0.95) 100%);
+        }
+
+        .product-card-custom .card-content {
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 2rem;
+        }
+
+        .product-tag {
+            display: inline-block;
+            align-self: flex-start;
+            margin-bottom: 1rem;
+            padding: 0.45rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(59,130,246,0.18);
+            border: 1px solid rgba(255,255,255,0.18);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .product-card-custom h3 {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-card-custom p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.92);
+            max-width: 95%;
+        }
+
+        .card-link {
+            margin-top: 1.25rem;
+            font-weight: 700;
+            color: #93c5fd;
+        }
+
+        .support-strip {
+            padding: 0 0 6rem;
+            background: var(--white);
+        }
+
+        .support-box {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .support-box h2 {
+            font-size: 2rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .support-box p {
+            max-width: 760px;
+            margin: 0 auto 1.5rem;
+            line-height: 1.85;
+            font-size: 1.05rem;
+        }
+
+        @media (max-width: 900px) {
+            .products-grid-custom {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card-custom.featured {
+                grid-column: span 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                margin-top: 74px;
+                min-height: 55vh;
+            }
+
+            .hero-inner h1 {
+                font-size: 2.5rem;
+            }
+
+            .intro-box,
+            .support-box {
+                padding: 2rem;
+            }
+
+            .product-card-custom .card-content {
+                padding: 1.5rem;
+            }
+
+            .product-card-custom h3 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/WhatsApp_Image_2026-02-10_at_16.39.26-2-removebg-preview.png" alt="Qmontt Logo">
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="nav-cta">GET A QUOTE</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="hero-inner">
+            <h1>Our Products</h1>
+            <p class="hero-lead">Reliable manufacturing partners. Proven quality. On-time delivery.</p>
+            <p class="hero-sub">Products at Qmontt are not standalone items — they are solutions designed, selected, and delivered to meet European industrial requirements.</p>
+        </div>
+    </section>
+
+    <section class="products-intro">
+        <div class="container">
+            <div class="intro-box">
+                <h2>Solutions Built Around Industrial Needs</h2>
+                <p>At Qmontt, we support a carefully selected portfolio of products across key industrial segments. From cast and forged components to vehicle technologies and product partnerships, our focus is on performance, manufacturability, consistency, and dependable delivery for European customers.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="products-section-custom">
+        <div class="container">
+            <div class="products-grid-custom">
+                <a href="casting.html" class="product-card-custom featured">
+                    <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=1400');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="product-tag">Industrial Manufacturing</span>
+                        <h3>Casting</h3>
+                        <p>Investment, sand, CI/SGI and steel castings with machining support for assembly-ready deliveries across demanding industrial and OEM applications.</p>
+                        <div class="card-link">Open page →</div>
+                    </div>
+                </a>
+
+                <a href="forging.html" class="product-card-custom">
+                    <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=1200');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="product-tag">Certified Supply</span>
+                        <h3>Forging</h3>
+                        <p>High-strength closed-die hot forgings from certified manufacturing partners with strong process control, machining capability, and scalable press capacity.</p>
+                        <div class="card-link">Open page →</div>
+                    </div>
+                </a>
+
+                <a href="vehicle-components.html" class="product-card-custom">
+                    <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1200');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="product-tag">Automotive Electronics</span>
+                        <h3>Vehicle Components</h3>
+                        <p>Reliable in-vehicle power, surveillance, displays, infotainment, and cooling solutions for passenger, commercial, and specialty vehicles.</p>
+                        <div class="card-link">Open page →</div>
+                    </div>
+                </a>
+
+                <a href="vehicle-accessories.html" class="product-card-custom">
+                    <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="product-tag">Mobile Cold Storage</span>
+                        <h3>Vehicle Accessories</h3>
+                        <p>Portable refrigerators, freezer units, cooler boxes, and vaccine carriers for mobility, logistics, healthcare, and field applications.</p>
+                        <div class="card-link">Open page →</div>
+                    </div>
+                </a>
+
+                <a href="product-partnerships.html" class="product-card-custom">
+                    <div class="card-bg" style="background-image:url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200');"></div>
+                    <div class="card-overlay"></div>
+                    <div class="card-content">
+                        <span class="product-tag">Strategic Growth</span>
+                        <h3>Product Partnerships</h3>
+                        <p>Selected product platforms supported through structured European market engagement, technical coordination, and long-term partnership development.</p>
+                        <div class="card-link">Open page →</div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="support-strip">
+        <div class="container">
+            <div class="support-box">
+                <h2>Need Help Choosing the Right Product Route?</h2>
+                <p>Whether your requirement is technical, commercial, or market-entry driven, Qmontt can help identify the right product family and support dependable sourcing and execution.</p>
+                <a href="contact.html" class="btn-white">Talk to Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/WhatsApp_Image_2026-02-10_at_16.39.26-2-removebg-preview.png" alt="Qmontt Logo" class="footer-logo">
+                    <p>Solutions Designed Around Your Needs</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Information</h4>
+                    <p>Sågverksvagen 3, Södertälje 15255, Sweden</p>
+                    <p>+46 764 597 932</p>
+                    <p>info@qmontt.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2026 Qmontt | All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
