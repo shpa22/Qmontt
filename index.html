@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qmontt AB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .hero {
+            min-height: 100vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.42), rgba(0,0,0,0.42)),
+                url('hero-bg.jpg.jpg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-inner {
+            max-width: 860px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 4.4rem;
+            font-weight: 800;
+            line-height: 1.08;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-secondary-ghost {
+            display: inline-block;
+            color: white;
+            border: 1px solid rgba(255,255,255,0.45);
+            padding: 0.8rem 1.8rem;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(4px);
+        }
+
+        .btn-secondary-ghost:hover {
+            background: rgba(255,255,255,0.12);
+        }
+
+        .section-clean {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .intro-panel {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 2.75rem;
+            max-width: 980px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .intro-panel h2,
+        .section-title-center {
+            font-size: 2.5rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .intro-panel p,
+        .section-subtext {
+            max-width: 860px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.9;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .products-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+        }
+
+        .preview-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 1.7rem;
+            border: 1px solid rgba(14,30,60,0.06);
+            box-shadow: 0 10px 26px rgba(14,30,60,0.04);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            min-height: 230px;
+        }
+
+        .preview-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 34px rgba(14,30,60,0.08);
+        }
+
+        .preview-card.featured {
+            grid-column: span 1;
+        }
+
+        .preview-tag {
+            display: inline-block;
+            align-self: flex-start;
+            padding: 0.38rem 0.7rem;
+            border-radius: 999px;
+            background: rgba(87,125,166,0.12);
+            color: var(--primary);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .preview-card h3 {
+            font-size: 1.55rem;
+            color: var(--dark);
+            margin-bottom: 0.8rem;
+            line-height: 1.2;
+        }
+
+        .preview-card p {
+            color: var(--text);
+            font-size: 0.97rem;
+            line-height: 1.8;
+            margin: 0 0 1.1rem 0;
+        }
+
+        .preview-link {
+            margin-top: auto;
+            color: var(--secondary);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .preview-link:hover {
+            text-decoration: underline;
+        }
+
+        .industries-grid-clean {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.4rem;
+            margin-top: 2.4rem;
+        }
+
+        .industry-card-clean {
+            background: var(--light);
+            border-radius: 18px;
+            padding: 1.7rem;
+            text-align: center;
+        }
+
+        .industry-card-clean h3 {
+            font-size: 1.2rem;
+            color: var(--dark);
+            margin-bottom: 0.7rem;
+        }
+
+        .industry-card-clean p {
+            font-size: 0.95rem;
+            line-height: 1.75;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .cta-band {
+            padding: 0 0 5rem;
+            background: var(--white);
+        }
+
+        .cta-panel {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .cta-panel h2 {
+            font-size: 2rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .cta-panel p {
+            max-width: 780px;
+            margin: 0 auto 1.3rem;
+            font-size: 1.03rem;
+            line-height: 1.85;
+        }
+
+        .process-home {
+            padding: 1rem 0 5rem;
+            background: var(--white);
+        }
+
+        .process-grid-home {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.4rem;
+            margin-top: 2.3rem;
+        }
+
+        .process-card-home {
+            background: linear-gradient(180deg, #f8fbfe 0%, #edf4fb 100%);
+            border: 1px solid rgba(87,125,166,0.12);
+            border-radius: 22px;
+            padding: 2rem 1.3rem 1.5rem;
+            text-align: center;
+        }
+
+        .process-num {
+            width: 58px;
+            height: 58px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary), #577da6);
+            color: white;
+            font-weight: 800;
+            font-size: 1.25rem;
+        }
+
+        .process-card-home h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.7rem;
+            color: var(--dark);
+        }
+
+        .process-card-home p {
+            font-size: 0.96rem;
+            line-height: 1.8;
+            color: var(--text);
+            margin: 0;
+        }
+
+        .team-home-wrap .team-grid {
+            margin-top: 2.3rem;
+        }
+
+        .contact-home-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2.2rem;
+        }
+
+        .contact-home-card,
+        .contact-home-side {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 2.2rem;
+        }
+
+        .contact-home-card h3,
+        .contact-home-side h3 {
+            font-size: 1.7rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .contact-home-card p,
+        .contact-home-side p {
+            font-size: 1rem;
+            line-height: 1.85;
+            color: var(--text);
+        }
+
+        .mini-contact-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.2rem;
+        }
+
+        .mini-contact-item {
+            background: white;
+            border-left: 4px solid #577da6;
+            border-radius: 14px;
+            padding: 1rem 1.1rem;
+        }
+
+        .mini-contact-item strong {
+            display: block;
+            color: var(--dark);
+            margin-bottom: 0.35rem;
+        }
+
+        .mini-contact-item span,
+        .mini-contact-item a {
+            color: var(--text);
+            text-decoration: none;
+            line-height: 1.7;
+            font-size: 0.96rem;
+        }
+
+        @media (max-width: 1024px) {
+            .products-preview-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .industries-grid-clean,
+            .process-grid-home {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .contact-home-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.7rem;
+            }
+
+            .intro-panel,
+            .cta-panel,
+            .contact-home-card,
+            .contact-home-side {
+                padding: 2rem;
+            }
+
+            .products-preview-grid,
+            .industries-grid-clean,
+            .process-grid-home {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/WhatsApp_Image_2026-02-10_at_16.39.26-2-removebg-preview.png" alt="Qmontt Logo">
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="active">HOME</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="nav-cta">GET A QUOTE</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <h1>Solutions Designed Around Your Needs</h1>
+            <div class="hero-actions">
+                <a href="products.html" class="btn-primary">Explore Products</a>
+                <a href="contact.html" class="btn-secondary-ghost">Discuss Your Requirement</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-clean">
+        <div class="container">
+            <div class="intro-panel">
+                <h2>We Do More Than Deliver Products</h2>
+                <p>At Qmontt, we help turn technical and commercial requirements into practical, workable solutions. From product sourcing and design-to-manufacture support to structured coordination and long-term partnerships, our role is to make complexity manageable and execution reliable.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-clean" style="padding-top: 0;">
+        <div class="container">
+            <h2 class="section-title-center">Our Products</h2>
+            <p class="section-subtext">A focused overview of the solutions and product areas supported through Qmontt.</p>
+
+            <div class="products-preview-grid">
+                <a href="casting.html" class="preview-card">
+                    <span class="preview-tag">Industrial Manufacturing</span>
+                    <h3>Casting</h3>
+                    <p>Investment, sand, CI/SGI, and steel casting solutions with machining support for dependable industrial and OEM applications.</p>
+                    <span class="preview-link">View details →</span>
+                </a>
+
+                <a href="forging.html" class="preview-card">
+                    <span class="preview-tag">Certified Supply</span>
+                    <h3>Forging</h3>
+                    <p>High-strength forged components supported by certified manufacturing and scalable machining capabilities.</p>
+                    <span class="preview-link">View details →</span>
+                </a>
+
+                <a href="vehicle-components.html" class="preview-card">
+                    <span class="preview-tag">Vehicle Technology</span>
+                    <h3>Vehicle Components</h3>
+                    <p>Reliable power, monitoring, display, infotainment, and cooling solutions for vehicle-based applications.</p>
+                    <span class="preview-link">View details →</span>
+                </a>
+
+                <a href="vehicle-accessories.html" class="preview-card">
+                    <span class="preview-tag">Portable Solutions</span>
+                    <h3>Vehicle Accessories</h3>
+                    <p>Portable refrigeration, cooling, and mobile-use support solutions for transport, field work, and professional use.</p>
+                    <span class="preview-link">View details →</span>
+                </a>
+
+                <a href="product-partnerships.html" class="preview-card">
+                    <span class="preview-tag">Partnership Model</span>
+                    <h3>Product Partnerships</h3>
+                    <p>Structured market support for established product platforms and long-term manufacturing collaboration.</p>
+                    <span class="preview-link">View details →</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-band">
+        <div class="container">
+            <div class="cta-panel">
+                <h2>Your Vision Becomes Our Mission</h2>
+                <p>We support structured engagement across sourcing, product partnerships, and technical coordination — with focus on clarity, reliability, and long-term value.</p>
+                <a href="contact.html" class="btn-white">Speak With Qmontt</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-clean" style="padding-top: 0;">
+        <div class="container">
+            <h2 class="section-title-center">Industries We Serve</h2>
+            <p class="section-subtext">Supporting industrial customers with structured solutions across key sectors.</p>
+
+            <div class="industries-grid-clean">
+                <div class="industry-card-clean">
+                    <h3>Automotive</h3>
+                    <p>Components and systems aligned with demanding mobility applications and OEM expectations.</p>
+                </div>
+                <div class="industry-card-clean">
+                    <h3>Agriculture</h3>
+                    <p>Reliable industrial parts and manufacturing support for durable field and equipment use.</p>
+                </div>
+                <div class="industry-card-clean">
+                    <h3>Energy</h3>
+                    <p>Structured support for components and solutions used in industrial and energy-related applications.</p>
+                </div>
+                <div class="industry-card-clean">
+                    <h3>Electronics & Automation</h3>
+                    <p>Vehicle-oriented electronics, monitoring, and integrated technical solutions for practical use cases.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-home">
+        <div class="container">
+            <h2 class="section-title-center">Process We Follow</h2>
+            <p class="section-subtext">A structured, transparent, and result-driven approach from requirement to delivery.</p>
+
+            <div class="process-grid-home">
+                <div class="process-card-home">
+                    <div class="process-num">01</div>
+                    <h3>Share Your Requirements</h3>
+                    <p>We review drawings, specifications, materials, and volumes to understand the right solution path.</p>
+                </div>
+                <div class="process-card-home">
+                    <div class="process-num">02</div>
+                    <h3>Quotation</h3>
+                    <p>Receive a transparent quotation aligned with process route, tooling scope, and expected timeline.</p>
+                </div>
+                <div class="process-card-home">
+                    <div class="process-num">03</div>
+                    <h3>Samples & Validation</h3>
+                    <p>Preproduction validation supports quality confidence through dimensional and material reporting.</p>
+                </div>
+                <div class="process-card-home">
+                    <div class="process-num">04</div>
+                    <h3>Serial Production</h3>
+                    <p>Once approved, production moves forward with focus on consistency, coordination, and delivery reliability.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-clean team-home-wrap" style="padding-top: 0;">
+        <div class="container">
+            <h2 class="section-title-center">Team Members</h2>
+            <p class="section-subtext">Behind Qmontt is a team of experienced professionals who understand both the technical and commercial realities of global manufacturing and sourcing.</p>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/Picture-1.png" alt="Shrikant Patil">
+                    <h4>Shrikant Patil</h4>
+                    <p>Engineering &amp; Operations</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/Picture-01.png" alt="Rodrigo Andrés Rivera">
+                    <h4>Rodrigo Andrés Rivera</h4>
+                    <p>Engineering &amp; Quality</p>
+                </div>
+
+                <div class="team-card">
+                    <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/Picture-10.png" alt="Vinay Rajashekar">
+                    <h4>Vinay Rajashekar</h4>
+                    <p>CEO &amp; Sales</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-clean" style="padding-top: 0;">
+        <div class="container">
+            <div class="contact-home-grid">
+                <div class="contact-home-card">
+                    <h3>Contact & Join Together</h3>
+                    <p>If you are evaluating sourcing solutions, product partnerships, or technical collaboration, we welcome your enquiry.</p>
+
+                    <div class="mini-contact-list">
+                        <div class="mini-contact-item">
+                            <strong>Office</strong>
+                            <span>Sågverksvagen 3, Södertälje 15255, Sweden</span>
+                        </div>
+                        <div class="mini-contact-item">
+                            <strong>Email</strong>
+                            <a href="mailto:info@qmontt.com">info@qmontt.com</a>
+                        </div>
+                        <div class="mini-contact-item">
+                            <strong>Telephone</strong>
+                            <a href="tel:+46764597932">+46 764 597 932</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-home-side">
+                    <h3>Let’s Start a Conversation</h3>
+                    <p>Tell us about your requirement and we will respond with a structured, practical, and reliable approach aligned with your needs.</p>
+                    <a href="contact.html" class="btn-primary">Go to Contact Page</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/WhatsApp_Image_2026-02-10_at_16.39.26-2-removebg-preview.png" alt="Qmontt Logo" class="footer-logo">
+                    <p>Solutions Designed Around Your Needs</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Information</h4>
+                    <p>Sågverksvagen 3, Södertälje 15255, Sweden</p>
+                    <p>+46 764 597 932</p>
+                    <p>info@qmontt.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2026 Qmontt | All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
