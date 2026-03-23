@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Qmontt AB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-hero {
+            min-height: 58vh;
+            background:
+                linear-gradient(rgba(0,0,0,0.56), rgba(0,0,0,0.56)),
+                url('https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1600') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-top: 82px;
+        }
+
+        .hero-inner {
+            max-width: 920px;
+            padding: 2rem;
+        }
+
+        .hero-inner h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.15;
+        }
+
+        .hero-inner p {
+            font-size: 1.12rem;
+            line-height: 1.9;
+            max-width: 760px;
+            margin: 0 auto;
+            color: rgba(255,255,255,0.92);
+        }
+
+        .about-section {
+            padding: 5rem 0 1.5rem;
+            background: var(--white);
+        }
+
+        .about-card {
+            background: var(--light);
+            border-radius: 20px;
+            padding: 2.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .about-card h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .about-card p,
+        .about-card li {
+            font-size: 1.06rem;
+            line-height: 1.9;
+            color: var(--text);
+        }
+
+        .about-card ul {
+            margin: 0.6rem 0 0 1.2rem;
+        }
+
+        .about-card li {
+            margin-bottom: 0.75rem;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .value-box {
+            background: white;
+            border-left: 4px solid #577da6;
+            border-radius: 14px;
+            padding: 1.4rem;
+        }
+
+        .value-box h4 {
+            font-size: 1.08rem;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .value-box p {
+            font-size: 0.98rem;
+            line-height: 1.75;
+            margin: 0;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .team-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.75rem;
+            text-align: center;
+            box-shadow: 0 8px 18px rgba(14,30,60,0.05);
+        }
+
+        .team-card img {
+            width: 140px;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1rem;
+        }
+
+        .team-card h4 {
+            font-size: 1.15rem;
+            color: var(--dark);
+            margin-bottom: 0.35rem;
+        }
+
+        .team-card p {
+            margin: 0;
+            color: var(--text);
+            font-size: 0.98rem;
+        }
+
+        .process-section {
+            padding: 1rem 0 5rem;
+            background: var(--white);
+        }
+
+        .process-header {
+            max-width: 820px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+
+        .process-header h2 {
+            font-size: 2.6rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+
+        .process-header h2 span {
+            color: #577da6;
+        }
+
+        .process-header p {
+            font-size: 1.06rem;
+            line-height: 1.85;
+            color: var(--text);
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            position: relative;
+        }
+
+        .process-step {
+            position: relative;
+            background: linear-gradient(180deg, #f8fbfe 0%, #edf4fb 100%);
+            border: 1px solid rgba(87,125,166,0.12);
+            border-radius: 24px;
+            padding: 2.2rem 1.4rem 1.6rem;
+            text-align: center;
+            min-height: 300px;
+            box-shadow: 0 10px 24px rgba(14,30,60,0.05);
+        }
+
+        .process-step::after {
+            content: "";
+            position: absolute;
+            top: 44%;
+            right: -18px;
+            width: 36px;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(87,125,166,0.8), rgba(87,125,166,0.15));
+        }
+
+        .process-step:last-child::after {
+            display: none;
+        }
+
+        .step-number {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.2rem;
+            background: linear-gradient(135deg, var(--primary), #577da6);
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 800;
+            box-shadow: 0 10px 24px rgba(31,58,138,0.18);
+        }
+
+        .process-step h3 {
+            font-size: 1.45rem;
+            color: var(--dark);
+            margin-bottom: 0.8rem;
+            line-height: 1.3;
+        }
+
+        .process-step p {
+            font-size: 1rem;
+            color: var(--text);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .quote-strip {
+            margin-top: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .quote-strip h2 {
+            font-size: 2.2rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .value-grid,
+            .team-grid,
+            .process-timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .process-step::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-hero {
+                margin-top: 74px;
+                min-height: 50vh;
+            }
+
+            .hero-inner h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-card,
+            .quote-strip {
+                padding: 2rem;
+            }
+
+            .process-header h2 {
+                font-size: 2rem;
+            }
+
+            .process-step {
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/WhatsApp_Image_2026-02-10_at_16.39.26-2-removebg-preview.png" alt="Qmontt Logo">
+            </div>
+            <div class="nav-right">
+                <ul class="nav-menu">
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="about.html" class="active">About</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <a href="contact.html" class="nav-cta">GET A QUOTE</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-hero">
+        <div class="hero-inner">
+            <h1>About Qmontt AB</h1>
+            <p>Finding a solution is our ultimate goal. Qmontt AB is a Sweden-based consultancy and sourcing partner supporting manufacturers and customers through structured, solution-driven industrial collaboration.</p>
+        </div>
+    </section>
+
+    <section class="about-section">
+        <div class="container">
+            <div class="about-card">
+                <h2>Who We Are</h2>
+                <p>Qmontt AB is a Sweden-based consultancy and sourcing partner dedicated to helping international manufacturers succeed in Europe. We specialize in connecting innovative products and reliable industrial components with the right customers, distributors, and OEMs across the Nordic and European markets.</p>
+                <p>Our approach is practical and solution-oriented. We support customers and manufacturing partners with clear communication, technical understanding, and structured coordination from concept to delivery.</p>
+            </div>
+
+            <div class="about-card">
+                <h2>Our Story</h2>
+                <p>Founded with a vision to simplify global trade, Qmontt was created to make market entry seamless for high-potential companies. Our roots span across diverse industries — from advanced vehicle components and accessories to precision castings and forgings — giving us the expertise to deliver solutions that meet European standards and customer expectations.</p>
+            </div>
+
+            <div class="about-card">
+                <h2>What We Do</h2>
+                <div class="value-grid">
+                    <div class="value-box">
+                        <h4>Product Integration</h4>
+                        <p>From portable cooling systems and vehicle accessories to industrial castings and forged parts.</p>
+                    </div>
+                    <div class="value-box">
+                        <h4>Design-to-Manufacture Support</h4>
+                        <p>Helping refine designs for efficiency, manufacturability, and compliance.</p>
+                    </div>
+                    <div class="value-box">
+                        <h4>Market Entry &amp; Growth</h4>
+                        <p>Identifying the right partners, channels, and strategies for structured expansion.</p>
+                    </div>
+                    <div class="value-box">
+                        <h4>End-to-End Coordination</h4>
+                        <p>Smooth delivery, technical clarification, and communication across the full process.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-card">
+                <h2>Our Approach</h2>
+                <div class="value-grid">
+                    <div class="value-box">
+                        <h4>Customer-Centric</h4>
+                        <p>Your challenges are opportunities to create practical solutions.</p>
+                    </div>
+                    <div class="value-box">
+                        <h4>Solution-Oriented</h4>
+                        <p>We simplify complexity and deliver structured, workable outcomes.</p>
+                    </div>
+                    <div class="value-box">
+                        <h4>Quality-Driven</h4>
+                        <p>Every product and process is aligned with European expectations.</p>
+                    </div>
+                    <div class="value-box">
+                        <h4>Collaborative</h4>
+                        <p>We work alongside customers and manufacturing partners from concept to completion.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-card">
+                <h2>Why Companies Work With Qmontt</h2>
+                <ul>
+                    <li>Local presence in Sweden with global reach</li>
+                    <li>Strong network of trusted suppliers and partners</li>
+                    <li>Expertise across automotive, manufacturing, and agriculture</li>
+                    <li>Commitment to transparency, reliability, and long-term success</li>
+                </ul>
+            </div>
+
+            <div class="about-card">
+                <h2>Mission &amp; Vision</h2>
+                <div class="value-grid">
+                    <div class="value-box">
+                        <h4>Our Mission</h4>
+                        <p>To deliver practical sourcing and engineering solutions that create value for both manufacturers and customers.</p>
+                    </div>
+                    <div class="value-box">
+                        <h4>Our Vision</h4>
+                        <p>To be a trusted partner recognized for solving complex industrial sourcing and manufacturing challenges.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="about-card">
+                <h2>Our Team</h2>
+                <p>Behind Qmontt is a team of professionals with strong technical and commercial experience across global manufacturing and European market requirements. We combine engineering understanding with practical execution to support structured and reliable collaboration.</p>
+
+                <div class="team-grid">
+                    <div class="team-card">
+                        <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/Picture-1.png" alt="Shrikant Patil">
+                        <h4>Shrikant Patil</h4>
+                        <p>Engineering &amp; Operations</p>
+                    </div>
+
+                    <div class="team-card">
+                        <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/Picture-01.png" alt="Rodrigo Andrés Rivera">
+                        <h4>Rodrigo Andrés Rivera</h4>
+                        <p>Engineering &amp; Quality</p>
+                    </div>
+
+                    <div class="team-card">
+                        <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/Picture-10.png" alt="Vinay Rajashekar">
+                        <h4>Vinay Rajashekar</h4>
+                        <p>CEO &amp; Sales</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="container">
+            <div class="process-header">
+                <h2>Process <span>We Follow</span></h2>
+                <p>We follow a structured, transparent, and result-driven approach to ensure every project is delivered with precision, reliability, and efficiency.</p>
+            </div>
+
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <h3>Share Your Requirements</h3>
+                    <p>Drawings, specifications, materials, and volumes are reviewed so we can assess feasibility and identify the most suitable process route.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <h3>Quotation</h3>
+                    <p>Receive a transparent quotation aligned with the intended process, tooling scope, manufacturing route, and expected timeline.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <h3>Samples &amp; Validation</h3>
+                    <p>Preproduction samples are validated with the dimensional and material reports required to support European quality expectations.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <h3>Serial Production</h3>
+                    <p>Once approved, production moves forward with focus on consistent quality, clear coordination, and dependable delivery.</p>
+                </div>
+            </div>
+
+            <div class="quote-strip">
+                <h2>Your vision becomes our mission. Together, we make it happen.</h2>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/WhatsApp_Image_2026-02-10_at_16.39.26-2-removebg-preview.png" alt="Qmontt Logo" class="footer-logo">
+                    <p>Solutions Designed Around Your Needs</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Useful Links</h4>
+                    <ul>
+                        <li><a href="about.html">About us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Information</h4>
+                    <p>Sågverksvagen 3, Södertälje 15255, Sweden</p>
+                    <p>+46 764 597 932</p>
+                    <p>info@qmontt.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2026 Qmontt | All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
