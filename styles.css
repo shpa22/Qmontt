@@ -729,3 +729,6 @@ footer {
         font-size: 2rem;
     }
 }
+.nav-menu a {
+    text-transform: capitalize !important;
+}
