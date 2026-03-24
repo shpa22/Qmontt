@@ -732,3 +732,28 @@ footer {
 .nav-menu a {
     text-transform: capitalize !important;
 }
+/* === CONTACT PAGE FIX === */
+
+.contact-grid {
+    align-items: stretch !important;
+}
+
+.contact-grid > div {
+    height: 100% !important;
+}
+
+/* Make location card fill height */
+.contact-home-side,
+.location-card {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Make map stretch properly */
+iframe {
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 320px;
+    border: 0;
+    border-radius: 15px;
+}
