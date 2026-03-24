@@ -757,3 +757,10 @@ iframe {
     border: 0;
     border-radius: 15px;
 }
+.contact-home-grid {
+    align-items: stretch !important;
+}
+
+.contact-home-grid > div {
+    height: 100% !important;
+}
