@@ -193,22 +193,23 @@
   <button class="slider-btn slider-btn-left" onclick="slideCastingGallery(-1)">‹</button>
 
   <div class="casting-slider" id="castingSlider">
-    <img src="casting 1.1.jpg" alt="Casting process image 1" onclick="openCastingLightbox(this.src)">
-    <img src="casting 1.jpg" alt="Casting process image 2" onclick="openCastingLightbox(this.src)">
-    <img src="casting 2.1.jpg" alt="Casting process image 3" onclick="openCastingLightbox(this.src)">
-    <img src="casting 3.1.jpg" alt="Casting process image 4" onclick="openCastingLightbox(this.src)">
-    <img src="casting 4.1.jpg" alt="Casting process image 4" onclick="openCastingLightbox(this.src)">
-    <img src="casting 5.jpg" alt="Casting process image 4" onclick="openCastingLightbox(this.src)">
-    <img src="casting 6.1.jpg" alt="Casting process image 4" onclick="openCastingLightbox(this.src)">
-  </div>
+          <img src="Casting 1.1.jpg" alt="Casting product image 1" onclick="openCastingLightbox(this.src)">
+          <img src="Casting 1.jpg" alt="Casting product image 2" onclick="openCastingLightbox(this.src)">
+          <img src="Casting 2.1.jpg" alt="Casting product image 3" onclick="openCastingLightbox(this.src)">
+          <img src="Casting 3.1.jpg" alt="Casting product image 4" onclick="openCastingLightbox(this.src)">
+          <img src="Casting 4.1.jpg" alt="Casting product image 5" onclick="openCastingLightbox(this.src)">
+          <img src="Casting 5.jpg" alt="Casting product image 6" onclick="openCastingLightbox(this.src)">
+          <img src="Casting 6.1.jpg" alt="Casting product image 7" onclick="openCastingLightbox(this.src)">
+        </div>
+                <button class="slider-btn" onclick="slideCastingGallery(1)">›</button>
+      </div>
 
-  <button class="slider-btn slider-btn-right" onclick="slideCastingGallery(1)">›</button>
-</div>
+      <p class="filename-note">If your uploaded files use .jpeg or .png instead of .jpg, change only the extension in the image lines above.</p>
 
-<div class="casting-lightbox" id="castingLightbox" onclick="closeCastingLightbox()">
-  <span class="casting-lightbox-close">×</span>
-  <img id="castingLightboxImg" src="" alt="Expanded casting image">
-</div>
+      <div class="casting-lightbox" id="castingLightbox" onclick="closeCastingLightbox()">
+        <span class="casting-lightbox-close">×</span>
+        <img id="castingLightboxImg" src="" alt="Expanded casting image">
+      </div>
 
             <div class="content-block">
                 <h2>Materials &amp; Processes</h2>
@@ -304,58 +305,57 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script>
-let castingAutoScroll;
+  <script>
+    let castingAutoScroll;
 
-function slideCastingGallery(direction) {
-    const slider = document.getElementById('castingSlider');
-    slider.scrollBy({
+    function slideCastingGallery(direction) {
+      const slider = document.getElementById('castingSlider');
+      slider.scrollBy({
         left: direction * 320,
         behavior: 'smooth'
-    });
-}
+      });
+    }
 
-function openCastingLightbox(src) {
-    document.getElementById('castingLightboxImg').src = src;
-    document.getElementById('castingLightbox').style.display = 'flex';
-}
+    function openCastingLightbox(src) {
+      document.getElementById('castingLightboxImg').src = src;
+      document.getElementById('castingLightbox').style.display = 'flex';
+    }
 
-function closeCastingLightbox() {
-    document.getElementById('castingLightbox').style.display = 'none';
-}
+    function closeCastingLightbox() {
+      document.getElementById('castingLightbox').style.display = 'none';
+    }
 
-function startCastingAutoScroll() {
-    const slider = document.getElementById('castingSlider');
+    function startCastingAutoScroll() {
+      const slider = document.getElementById('castingSlider');
 
-    castingAutoScroll = setInterval(() => {
+      castingAutoScroll = setInterval(() => {
         const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
 
         if (slider.scrollLeft >= maxScrollLeft - 5) {
-            slider.scrollTo({
-                left: 0,
-                behavior: 'smooth'
-            });
+          slider.scrollTo({
+            left: 0,
+            behavior: 'smooth'
+          });
         } else {
-            slider.scrollBy({
-                left: 320,
-                behavior: 'smooth'
-            });
+          slider.scrollBy({
+            left: 320,
+            behavior: 'smooth'
+          });
         }
-    }, 2500);
-}
+      }, 2500);
+    }
 
-function stopCastingAutoScroll() {
-    clearInterval(castingAutoScroll);
-}
+    function stopCastingAutoScroll() {
+      clearInterval(castingAutoScroll);
+    }
 
-window.addEventListener('load', () => {
-    startCastingAutoScroll();
+    window.addEventListener('load', () => {
+      startCastingAutoScroll();
 
-    const slider = document.getElementById('castingSlider');
-    slider.addEventListener('mouseenter', stopCastingAutoScroll);
-    slider.addEventListener('mouseleave', startCastingAutoScroll);
-});
-</script>
+      const slider = document.getElementById('castingSlider');
+      slider.addEventListener('mouseenter', stopCastingAutoScroll);
+      slider.addEventListener('mouseleave', startCastingAutoScroll);
+    });
+  </script> 
 </body>
 </html>
