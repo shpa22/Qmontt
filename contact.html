@@ -315,15 +315,21 @@
           <div class="panel">
             <h3>Send an Enquiry</h3>
             <p>Please share your application, sourcing need, or partnership interest. We will review your message and respond with the most suitable next step.</p>
+            <form class="enquiry-form" id="contactForm" action="https://formsubmit.co/ajax/info@qmontt.com" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="text" name="company" placeholder="Company Name">
+    <input type="text" name="subject" placeholder="Subject" required>
+    <textarea name="message" placeholder="Tell us about your requirement, application, or project." required></textarea>
 
-            <form class="enquiry-form">
-              <input type="text" placeholder="Your Name">
-              <input type="email" placeholder="Your Email">
-              <input type="text" placeholder="Company Name">
-              <input type="text" placeholder="Subject">
-              <textarea placeholder="Tell us about your requirement, application, or project."></textarea>
-              <button type="submit">Send Enquiry</button>
-            </form>
+    <input type="hidden" name="_subject" value="New enquiry from Qmontt website">
+    <input type="hidden" name="_captcha" value="false">
+
+    <button type="submit" id="submitBtn">Send Enquiry</button>
+</form>
+
+<p id="form-status" style="display:none; margin-top:10px; font-weight:600;"></p>
+
           </div>
 
           <div class="panel location-panel">
@@ -369,5 +375,44 @@
       </div>
     </div>
   </footer>
+  <script>
+const contactForm = document.getElementById('contactForm');
+const formStatus = document.getElementById('form-status');
+const submitBtn = document.getElementById('submitBtn');
+
+contactForm.addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+
+    const formData = new FormData(contactForm);
+
+    try {
+        const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: formData
+        });
+
+        if (response.ok) {
+            formStatus.style.display = 'block';
+            formStatus.style.color = 'green';
+            formStatus.textContent = 'Your enquiry has been sent successfully.';
+            contactForm.reset();
+        } else {
+            formStatus.style.display = 'block';
+            formStatus.style.color = 'red';
+            formStatus.textContent = 'Something went wrong. Please try again.';
+        }
+    } catch (error) {
+        formStatus.style.display = 'block';
+        formStatus.style.color = 'red';
+        formStatus.textContent = 'Unable to send enquiry.';
+    }
+
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Send Enquiry';
+});
+</script>
 </body>
 </html>
