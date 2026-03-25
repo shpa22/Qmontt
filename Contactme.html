@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Qmontt AB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo">
+        <img src="https://slategray-trout-517581.hostingersite.com/wp-content/uploads/2026/02/WhatsApp_Image_2026-02-10_at_16.39.26-2-removebg-preview.png" alt="Qmontt Logo">
+      </div>
+      <div class="nav-right">
+        <ul class="nav-menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <a href="contact.html" class="nav-cta">Get a Quote</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="contact-page">
+    <div class="container">
+
+      <div class="panel">
+        <h3>Send an Enquiry</h3>
+        <p>Please share your application, sourcing need, or partnership interest. We will review your message and respond with the most suitable next step.</p>
+
+        <form class="enquiry-form" id="contactForm" action="https://formsubmit.co/ajax/info@qmontt.com" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <input type="text" name="company" placeholder="Company Name">
+          <input type="text" name="subject" placeholder="Subject" required>
+          <textarea name="message" placeholder="Tell us about your requirement, application, or project." required></textarea>
+
+          <input type="hidden" name="_subject" value="New enquiry from Qmontt website">
+          <input type="hidden" name="_captcha" value="false">
+
+          <button type="submit" id="submitBtn">Send Enquiry</button>
+        </form>
+
+        <p id="form-status" style="display:none; margin-top:10px; font-weight:600;"></p>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    const contactForm = document.getElementById('contactForm');
+    const formStatus = document.getElementById('form-status');
+    const submitBtn = document.getElementById('submitBtn');
+
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Sending...';
+      formStatus.style.display = 'none';
+
+      const formData = new FormData(contactForm);
+
+      try {
+        const response = await fetch(contactForm.action, {
+          method: 'POST',
+          body: formData
+        });
+
+        if (response.ok) {
+          formStatus.style.display = 'block';
+          formStatus.style.color = 'green';
+          formStatus.textContent = 'Your enquiry has been sent successfully.';
+          contactForm.reset();
+        } else {
+          formStatus.style.display = 'block';
+          formStatus.style.color = 'red';
+          formStatus.textContent = 'Something went wrong. Please try again.';
+        }
+      } catch (error) {
+        formStatus.style.display = 'block';
+        formStatus.style.color = 'red';
+        formStatus.textContent = 'Unable to send enquiry right now.';
+      }
+
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Enquiry';
+    });
+  </script>
+
+</body>
+</html>
