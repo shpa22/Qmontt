@@ -193,10 +193,13 @@
   <button class="slider-btn slider-btn-left" onclick="slideCastingGallery(-1)">‹</button>
 
   <div class="casting-slider" id="castingSlider">
-    <img src="casting-1.jpg" alt="Casting process image 1" onclick="openCastingLightbox(this.src)">
-    <img src="casting-2.jpg" alt="Casting process image 2" onclick="openCastingLightbox(this.src)">
-    <img src="casting-3.jpg" alt="Casting process image 3" onclick="openCastingLightbox(this.src)">
-    <img src="casting-4.jpg" alt="Casting process image 4" onclick="openCastingLightbox(this.src)">
+    <img src="casting 1.1.jpg" alt="Casting process image 1" onclick="openCastingLightbox(this.src)">
+    <img src="casting 1.jpg" alt="Casting process image 2" onclick="openCastingLightbox(this.src)">
+    <img src="casting 2.1.jpg" alt="Casting process image 3" onclick="openCastingLightbox(this.src)">
+    <img src="casting 3.1.jpg" alt="Casting process image 4" onclick="openCastingLightbox(this.src)">
+    <img src="casting 4.1.jpg" alt="Casting process image 4" onclick="openCastingLightbox(this.src)">
+    <img src="casting 5.jpg" alt="Casting process image 4" onclick="openCastingLightbox(this.src)">
+    <img src="casting 6.1.jpg" alt="Casting process image 4" onclick="openCastingLightbox(this.src)">
   </div>
 
   <button class="slider-btn slider-btn-right" onclick="slideCastingGallery(1)">›</button>
@@ -302,12 +305,13 @@
     </footer>
 
     <script src="script.js"></script>
-</body>
     <script>
+let castingAutoScroll;
+
 function slideCastingGallery(direction) {
     const slider = document.getElementById('castingSlider');
     slider.scrollBy({
-        left: direction * 300,
+        left: direction * 320,
         behavior: 'smooth'
     });
 }
@@ -320,5 +324,38 @@ function openCastingLightbox(src) {
 function closeCastingLightbox() {
     document.getElementById('castingLightbox').style.display = 'none';
 }
+
+function startCastingAutoScroll() {
+    const slider = document.getElementById('castingSlider');
+
+    castingAutoScroll = setInterval(() => {
+        const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
+
+        if (slider.scrollLeft >= maxScrollLeft - 5) {
+            slider.scrollTo({
+                left: 0,
+                behavior: 'smooth'
+            });
+        } else {
+            slider.scrollBy({
+                left: 320,
+                behavior: 'smooth'
+            });
+        }
+    }, 2500);
+}
+
+function stopCastingAutoScroll() {
+    clearInterval(castingAutoScroll);
+}
+
+window.addEventListener('load', () => {
+    startCastingAutoScroll();
+
+    const slider = document.getElementById('castingSlider');
+    slider.addEventListener('mouseenter', stopCastingAutoScroll);
+    slider.addEventListener('mouseleave', startCastingAutoScroll);
+});
 </script>
+</body>
 </html>
