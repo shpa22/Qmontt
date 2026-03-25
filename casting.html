@@ -97,6 +97,66 @@
             .page-hero h1 { font-size: 2.5rem; }
             .content-block, .cta-strip { padding: 2rem; }
         }
+        <style>
+    .page-hero {
+        ...
+    }
+
+    /* EXISTING CSS ABOVE */
+
+    /* 🔽 ADD THIS BELOW */
+
+    .casting-slider-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 2.5rem 0 3rem;
+    }
+
+    .casting-slider {
+        display: flex;
+        gap: 1.2rem;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        width: 100%;
+    }
+
+    .casting-slider img {
+        flex: 0 0 32%;
+        height: 260px;
+        object-fit: cover;
+        border-radius: 18px;
+        cursor: pointer;
+    }
+
+    .slider-btn {
+        border: none;
+        background: var(--dark);
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .casting-lightbox {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.85);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .casting-lightbox img {
+        max-width: 90%;
+        max-height: 80vh;
+        border-radius: 12px;
+    }
+
+</style>
     </style>
 </head>
 <body>
@@ -129,11 +189,23 @@
                 <p>Qmontt AB supplies end-to-end casting solutions to European OEMs and industrial buyers through a vetted network of certified manufacturers in India and Latin America. Our partners cover Investment Casting, Sand Casting, and Cast Iron (CI/SGI) and Steel components, with in-house machining for assembly-ready deliveries.</p>
             </div>
 
-            <div class="gallery">
-                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=900" alt="Casting process">
-                <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=900" alt="Cast metal component">
-                <img src="https://images.unsplash.com/photo-1581092162384-8987c1d64718?w=900" alt="Industrial machining">
-            </div>
+            <div class="casting-slider-wrap">
+  <button class="slider-btn slider-btn-left" onclick="slideCastingGallery(-1)">‹</button>
+
+  <div class="casting-slider" id="castingSlider">
+    <img src="casting-1.jpg" alt="Casting process image 1" onclick="openCastingLightbox(this.src)">
+    <img src="casting-2.jpg" alt="Casting process image 2" onclick="openCastingLightbox(this.src)">
+    <img src="casting-3.jpg" alt="Casting process image 3" onclick="openCastingLightbox(this.src)">
+    <img src="casting-4.jpg" alt="Casting process image 4" onclick="openCastingLightbox(this.src)">
+  </div>
+
+  <button class="slider-btn slider-btn-right" onclick="slideCastingGallery(1)">›</button>
+</div>
+
+<div class="casting-lightbox" id="castingLightbox" onclick="closeCastingLightbox()">
+  <span class="casting-lightbox-close">×</span>
+  <img id="castingLightboxImg" src="" alt="Expanded casting image">
+</div>
 
             <div class="content-block">
                 <h2>Materials &amp; Processes</h2>
@@ -231,4 +303,22 @@
 
     <script src="script.js"></script>
 </body>
+    <script>
+function slideCastingGallery(direction) {
+    const slider = document.getElementById('castingSlider');
+    slider.scrollBy({
+        left: direction * 300,
+        behavior: 'smooth'
+    });
+}
+
+function openCastingLightbox(src) {
+    document.getElementById('castingLightboxImg').src = src;
+    document.getElementById('castingLightbox').style.display = 'flex';
+}
+
+function closeCastingLightbox() {
+    document.getElementById('castingLightbox').style.display = 'none';
+}
+</script>
 </html>
