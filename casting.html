@@ -106,39 +106,64 @@
 
     /* 🔽 ADD THIS BELOW */
 
-    .casting-slider-wrap {
-        position: relative;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        margin: 2.5rem 0 3rem;
-    }
+    .casting-marquee-wrap {
+  overflow: hidden;
+  width: 100%;
+  margin: 2.5rem 0 3rem;
+  position: relative;
+}
 
-    .casting-slider {
-        display: flex;
-        gap: 1.2rem;
-        overflow-x: auto;
-        scroll-behavior: smooth;
-        width: 100%;
-    }
+.casting-marquee-track {
+  display: flex;
+  gap: 1.2rem;
+  width: max-content;
+  animation: castingMarquee 28s linear infinite;
+}
 
-    .casting-slider img {
-        flex: 0 0 32%;
-        height: 260px;
-        object-fit: cover;
-        border-radius: 18px;
-        cursor: pointer;
-    }
+.casting-marquee-wrap:hover .casting-marquee-track {
+  animation-play-state: paused;
+}
 
-    .slider-btn {
-        border: none;
-        background: var(--dark);
-        color: white;
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
+.casting-marquee-track img {
+  width: 320px;
+  height: 250px;
+  object-fit: contain;
+  background: #eef5fb;
+  border-radius: 18px;
+  padding: 1rem;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(15, 31, 46, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  flex-shrink: 0;
+}
+
+.casting-marquee-track img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(15, 31, 46, 0.14);
+}
+
+@keyframes castingMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 960px) {
+  .casting-marquee-track img {
+    width: 260px;
+    height: 220px;
+  }
+}
+
+@media (max-width: 640px) {
+  .casting-marquee-track img {
+    width: 220px;
+    height: 200px;
+  }
+}
 
     .casting-lightbox {
         display: none;
@@ -189,22 +214,25 @@
                 <p>Qmontt AB supplies end-to-end casting solutions to European OEMs and industrial buyers through a vetted network of certified manufacturers in India and Latin America. Our partners cover Investment Casting, Sand Casting, and Cast Iron (CI/SGI) and Steel components, with in-house machining for assembly-ready deliveries.</p>
             </div>
 
-            <div class="casting-slider-wrap">
-  <button class="slider-btn slider-btn-left" onclick="slideCastingGallery(-1)">‹</button>
+           <div class="casting-marquee-wrap">
+  <div class="casting-marquee-track" id="castingMarqueeTrack">
+    <img src="Casting 1.1.jpg" alt="Casting product image 1" onclick="openCastingLightbox(this.src)">
+    <img src="Casting 1.jpg" alt="Casting product image 2" onclick="openCastingLightbox(this.src)">
+    <img src="Casting 2.1.jpg" alt="Casting product image 3" onclick="openCastingLightbox(this.src)">
+    <img src="Casting 3.1.jpg" alt="Casting product image 4" onclick="openCastingLightbox(this.src)">
+    <img src="Casting 4.1.jpg" alt="Casting product image 5" onclick="openCastingLightbox(this.src)">
+    <img src="Casting 5.jpg" alt="Casting product image 6" onclick="openCastingLightbox(this.src)">
+    <img src="Casting 6.1.jpg" alt="Casting product image 7" onclick="openCastingLightbox(this.src)">
 
-  <div class="casting-slider" id="castingSlider">
-          <img src="Casting 1.1.jpg" alt="Casting product image 1" onclick="openCastingLightbox(this.src)">
-          <img src="Casting 1.jpg" alt="Casting product image 2" onclick="openCastingLightbox(this.src)">
-          <img src="Casting 2.1.jpg" alt="Casting product image 3" onclick="openCastingLightbox(this.src)">
-          <img src="Casting 3.1.jpg" alt="Casting product image 4" onclick="openCastingLightbox(this.src)">
-          <img src="Casting 4.1.jpg" alt="Casting product image 5" onclick="openCastingLightbox(this.src)">
-          <img src="Casting 5.jpg" alt="Casting product image 6" onclick="openCastingLightbox(this.src)">
-          <img src="Casting 6.1.jpg" alt="Casting product image 7" onclick="openCastingLightbox(this.src)">
-        </div>
-                <button class="slider-btn" onclick="slideCastingGallery(1)">›</button>
-      </div>
-
-      <p class="filename-note">If your uploaded files use .jpeg or .png instead of .jpg, change only the extension in the image lines above.</p>
+    <img src="Casting 1.1.jpg" alt="Casting product image 1 duplicate" onclick="openCastingLightbox(this.src)">
+    <img src="Casting 1.jpg" alt="Casting product image 2 duplicate" onclick="openCastingLightbox(this.src)">
+    <img src="Casting 2.1.jpg" alt="Casting product image 3 duplicate" onclick="openCastingLightbox(this.src)">
+    <img src="Casting 3.1.jpg" alt="Casting product image 4 duplicate" onclick="openCastingLightbox(this.src)">
+    <img src="Casting 4.1.jpg" alt="Casting product image 5 duplicate" onclick="openCastingLightbox(this.src)">
+    <img src="Casting 5.jpg" alt="Casting product image 6 duplicate" onclick="openCastingLightbox(this.src)">
+    <img src="Casting 6.1.jpg" alt="Casting product image 7 duplicate" onclick="openCastingLightbox(this.src)">
+  </div>
+</div>
 
       <div class="casting-lightbox" id="castingLightbox" onclick="closeCastingLightbox()">
         <span class="casting-lightbox-close">×</span>
@@ -306,56 +334,14 @@
     </footer>
 
   <script>
-    let castingAutoScroll;
+function openCastingLightbox(src) {
+  document.getElementById('castingLightboxImg').src = src;
+  document.getElementById('castingLightbox').style.display = 'flex';
+}
 
-    function slideCastingGallery(direction) {
-      const slider = document.getElementById('castingSlider');
-      slider.scrollBy({
-        left: direction * 320,
-        behavior: 'smooth'
-      });
-    }
-
-    function openCastingLightbox(src) {
-      document.getElementById('castingLightboxImg').src = src;
-      document.getElementById('castingLightbox').style.display = 'flex';
-    }
-
-    function closeCastingLightbox() {
-      document.getElementById('castingLightbox').style.display = 'none';
-    }
-
-    function startCastingAutoScroll() {
-      const slider = document.getElementById('castingSlider');
-
-      castingAutoScroll = setInterval(() => {
-        const maxScrollLeft = slider.scrollWidth - slider.clientWidth;
-
-        if (slider.scrollLeft >= maxScrollLeft - 5) {
-          slider.scrollTo({
-            left: 0,
-            behavior: 'smooth'
-          });
-        } else {
-          slider.scrollBy({
-            left: 320,
-            behavior: 'smooth'
-          });
-        }
-      }, 2500);
-    }
-
-    function stopCastingAutoScroll() {
-      clearInterval(castingAutoScroll);
-    }
-
-    window.addEventListener('load', () => {
-      startCastingAutoScroll();
-
-      const slider = document.getElementById('castingSlider');
-      slider.addEventListener('mouseenter', stopCastingAutoScroll);
-      slider.addEventListener('mouseleave', startCastingAutoScroll);
-    });
-  </script> 
+function closeCastingLightbox() {
+  document.getElementById('castingLightbox').style.display = 'none';
+}
+</script> 
 </body>
 </html>
