@@ -98,6 +98,78 @@
             .content-block, .cta-strip { padding: 2rem; }
         }
     </style>
+    .forging-marquee-wrap {
+  overflow: hidden;
+  width: 100%;
+  margin: 2.5rem 0 3rem;
+  position: relative;
+}
+
+.forging-marquee-track {
+  display: flex;
+  gap: 1.2rem;
+  width: max-content;
+  animation: forgingMarquee 28s linear infinite;
+}
+
+.forging-marquee-wrap:hover .forging-marquee-track {
+  animation-play-state: paused;
+}
+
+.forging-marquee-track img {
+  width: 320px;
+  height: 250px;
+  object-fit: contain;
+  background: #eef5fb;
+  border-radius: 18px;
+  padding: 1rem;
+  cursor: pointer;
+  box-shadow: 0 12px 28px rgba(15, 31, 46, 0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  flex-shrink: 0;
+}
+
+.forging-marquee-track img:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 34px rgba(15, 31, 46, 0.14);
+}
+
+@keyframes forgingMarquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Lightbox */
+.forging-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.85);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+}
+
+.forging-lightbox img {
+  max-width: 90%;
+  max-height: 85vh;
+  background: white;
+  border-radius: 18px;
+  padding: 1rem;
+}
+
+.forging-lightbox-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+}
 </head>
 <body>
     <nav class="navbar">
@@ -129,11 +201,32 @@
                 <p>Premium closed-die hot steel forgings to customers across Sweden and Europe through certified, globally trusted forging partners. Multiple forging plants in our portfolio are equipped with advanced press lines and machining facilities. Certified manufacturing in accordance with IATF 16949 QMS ensures world-class quality, reliability, and process control.</p>
             </div>
 
-            <div class="gallery">
-                <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=900" alt="Forging production">
-                <img src="https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=900" alt="Forged metal parts">
-                <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?w=900" alt="Precision machining">
-            </div>
+            <div class="forging-marquee-wrap">
+  <div class="forging-marquee-track">
+
+    <img src="forging1.jpg" onclick="openForgingLightbox(this.src)">
+    <img src="forging2.jpg" onclick="openForgingLightbox(this.src)">
+    <img src="forging3.jpg" onclick="openForgingLightbox(this.src)">
+    <img src="forging4.jpg" onclick="openForgingLightbox(this.src)">
+    <img src="forging5.jpg" onclick="openForgingLightbox(this.src)">
+    <img src="forging5.jpg" onclick="openForgingLightbox(this.src)">
+
+    <!-- duplicate for continuous loop -->
+    <img src="forging1.jpg" onclick="openForgingLightbox(this.src)">
+    <img src="forging2.jpg" onclick="openForgingLightbox(this.src)">
+    <img src="forging3.jpg" onclick="openForgingLightbox(this.src)">
+    <img src="forging4.jpg" onclick="openForgingLightbox(this.src)">
+    <img src="forging5.jpg" onclick="openForgingLightbox(this.src)">
+    <img src="forging6.jpg" onclick="openForgingLightbox(this.src)">
+
+  </div>
+</div>
+
+<!-- Lightbox -->
+<div class="forging-lightbox" id="forgingLightbox" onclick="closeForgingLightbox()">
+  <span class="forging-lightbox-close">×</span>
+  <img id="forgingLightboxImg">
+</div>
 
             <div class="content-block">
                 <h2>Complete Forging Capabilities</h2>
@@ -234,5 +327,15 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+function openForgingLightbox(src) {
+  document.getElementById('forgingLightboxImg').src = src;
+  document.getElementById('forgingLightbox').style.display = 'flex';
+}
+
+function closeForgingLightbox() {
+  document.getElementById('forgingLightbox').style.display = 'none';
+}
+</script>
 </body>
 </html>
