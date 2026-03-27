@@ -1,35 +1,32 @@
-// Smooth scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+async function loadPartial(id, file) {
+    const target = document.getElementById(id);
+    if (!target) return;
 
-// Active nav on scroll
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-menu a');
+    try {
+        const response = await fetch(file);
+        if (!response.ok) throw new Error(`Failed to load ${file}`);
+        target.innerHTML = await response.text();
+    } catch (error) {
+        console.error(error);
+    }
+}
 
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= (sectionTop - 200)) {
-            current = section.getAttribute('id');
-        }
-    });
+function setActiveNavLink() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-menu a[data-page]');
 
     navLinks.forEach(link => {
         link.classList.remove('active');
-        if (link.getAttribute('href').slice(1) === current) {
+        if (link.dataset.page === currentPage) {
             link.classList.add('active');
         }
     });
-});
+}
+
+async function initLayout() {
+    await loadPartial('site-header', 'header.html');
+    await loadPartial('site-footer', 'footer.html');
+    setActiveNavLink();
+}
+
+document.addEventListener('DOMContentLoaded', initLayout);
