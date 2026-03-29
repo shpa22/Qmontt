@@ -7,18 +7,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .page-hero {
-      min-height: 58vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-      padding: 7rem 1.5rem 3rem;
-      background:
-        linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
-        url('Contact Us.jpg') center/cover;
-    }
+   .page-hero {
+  min-height: 58vh;
+  background:
+    linear-gradient(rgba(0,0,0,0.48), rgba(0,0,0,0.48)),
+    url('Contact Us.jpg') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-top: 82px;
+}
+
+.hero-inner {
+  max-width: 920px;
+  padding: 2rem;
+}
 
     .page-hero h1 {
       font-size: 3.6rem;
@@ -245,11 +250,11 @@
   <div id="site-header"></div>
 
   <section class="page-hero">
-    <div>
-      <h1>Let’s Start a Conversation</h1>
-      <p>If you are evaluating sourcing solutions, product partnerships, or technical collaboration, Qmontt is ready to discuss your requirement in a practical and structured way.</p>
-    </div>
-  </section>
+  <div class="hero-inner">
+    <h1>Let’s Start a Conversation</h1>
+    <p>If you are evaluating sourcing solutions, product partnerships, or technical collaboration, Qmontt is ready to discuss your requirement in a practical and structured way.</p>
+  </div>
+</section>
 
   <section class="contact-page">
     <div class="container">
