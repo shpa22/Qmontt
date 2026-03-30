@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Components | Qmontt AB</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="image-gallery.css">
+    <style>
+        .page-hero {
+            height: 58vh;
+            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+                        url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=1600') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-top: 82px;
+        }
+        .page-hero h1 { font-size: 4rem; font-weight: 800; }
+        .content-section { padding: 6rem 0; }
+        .content-block {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-bottom: 2.5rem;
+        }
+        .content-block h2 {
+            font-size: 2.35rem;
+            color: var(--dark);
+            margin-bottom: 1rem;
+        }
+        .content-block h3 {
+            font-size: 1.35rem;
+            color: var(--dark);
+            margin: 1.75rem 0 0.75rem;
+        }
+        .content-block p, .content-block li {
+            font-size: 1.08rem;
+            line-height: 1.85;
+            color: var(--text);
+        }
+        .content-block ul { margin: 0.75rem 0 0 1.25rem; }
+        .content-block li { margin-bottom: 0.7rem; }
+        .content-block strong { color: var(--dark); }
+        .intro-subtitle {
+            font-size: 1.3rem;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+        }
+        .segment-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+            margin-top: 1.5rem;
+        }
+        .segment-item {
+            background: white;
+            border-left: 4px solid var(--secondary);
+            padding: 1.25rem 1.5rem;
+            border-radius: 10px;
+        }
+        .cta-strip {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            border-radius: 18px;
+            padding: 3rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+        .cta-strip h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+        .cta-strip p {
+            max-width: 850px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        @media (max-width: 900px) {
+            .segment-list { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .page-hero { margin-top: 74px; }
+            .page-hero h1 { font-size: 2.5rem; }
+            .content-block, .cta-strip { padding: 2rem; }
+        }
+    </style>
+</head>
+<body>
+    <div id="site-header"></div>
+
+    <div class="page-hero">
+        <h1>Vehicle Components</h1>
+    </div>
+
+    <section class="content-section">
+        <div class="container">
+            <div class="content-block">
+                <h2>Advanced Vehicle Components</h2>
+                <p class="intro-subtitle">Innovative, reliable, and industry-proven automotive electronics &amp; comfort solutions</p>
+                <p>Qmontt AB partners with a leading Indian manufacturer of automotive vehicle components and accessories, a company supplying major OEMs and known for strong R&amp;D, indigenous manufacturing, and cutting-edge innovation. Their solutions are widely used in cars, trucks, buses, caravans, LCVs, and special military/defence vehicles.</p>
+            </div>
+
+            <section class="image-marquee" aria-label="Vehicle components gallery">
+                <div class="image-marquee-wrap">
+                    <div class="image-marquee-track">
+                        <img class="image-marquee-item" src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?w=900" alt="Vehicle technology">
+                        <img class="image-marquee-item" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=900" alt="Automotive electronics">
+                        <img class="image-marquee-item" src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=900" alt="Vehicle cockpit systems">
+                    </div>
+                </div>
+            </section>
+
+            <div class="content-block">
+                <h2>Our Vehicle Components Portfolio</h2>
+
+                <h3>1. USB Chargers &amp; Power Modules</h3>
+                <p>A complete range of in-vehicle charging and power accessories designed for reliability and safety.</p>
+                <ul>
+                    <li>12V power sockets</li>
+                    <li>USB charging sockets (single/dual/multi-port)</li>
+                    <li>DC-to-AC power inverters</li>
+                    <li>DC-to-DC power converters</li>
+                </ul>
+                <p>These systems support both passenger and commercial vehicles, ensuring drivers and passengers stay powered on the road.</p>
+
+                <h3>2. Vehicle Surveillance &amp; Safety Systems</h3>
+                <p>Industry-recognized safety products engineered for commercial fleets, buses, logistics, mining vehicles, and defence applications.</p>
+                <ul>
+                    <li>Rear-view &amp; reverse camera systems</li>
+                    <li>Parking sensors</li>
+                    <li>CCTV surveillance systems</li>
+                    <li>Mobile DVR (MDVR) systems</li>
+                    <li>Multi-camera monitoring kits</li>
+                </ul>
+                <p>These solutions are trusted for driver safety, cargo visibility, and fleet monitoring, and are used by multiple OEMs.</p>
+
+                <h3>3. In-Vehicle Displays &amp; Infotainment Systems</h3>
+                <p>High-performance screens and entertainment systems designed to enhance user experience.</p>
+                <ul>
+                    <li>LCD monitors</li>
+                    <li>IRVM-integrated displays</li>
+                    <li>DVD multimedia players</li>
+                    <li>Infotainment modules for buses &amp; premium vehicles</li>
+                </ul>
+                <p>These systems are engineered for navigation, entertainment, and fleet communication requirements.</p>
+
+                <h3>4. Portable Refrigerators &amp; Cooling Systems</h3>
+                <p>One of the company’s strongest product lines, widely used in both consumer and professional applications.</p>
+                <ul>
+                    <li>Portable vehicle refrigerators</li>
+                    <li>Freezers</li>
+                    <li>EV-compatible fridges</li>
+                    <li>Vaccine carriers</li>
+                    <li>Multi-purpose cold storage units</li>
+                </ul>
+                <p>These products support automotive, medical, logistics, and hospitality sectors.</p>
+            </div>
+
+            <div class="content-block">
+                <h2>Innovation, Quality &amp; Certifications</h2>
+                <ul>
+                    <li><strong>R&amp;D Excellence</strong> - 20+ years of engineering experience and strong new-product development capabilities.</li>
+                    <li><strong>Indigenous Manufacturing</strong> - modern manufacturing plants in Pune with high-precision assembly and testing infrastructure.</li>
+                    <li><strong>Strong Quality Standards</strong> - all products undergo rigorous quality checks and are CE and ARAI-certified, aligning with European standards.</li>
+                </ul>
+            </div>
+
+            <div class="content-block">
+                <h2>Industries &amp; Vehicle Segments Supported</h2>
+                <div class="segment-list">
+                    <div class="segment-item">Passenger cars</div>
+                    <div class="segment-item">Trucks &amp; commercial fleets</div>
+                    <div class="segment-item">Buses &amp; coaches</div>
+                    <div class="segment-item">Defence &amp; military vehicles</div>
+                    <div class="segment-item">Construction &amp; mining vehicles</div>
+                    <div class="segment-item">LCVs &amp; agricultural vehicles</div>
+                    <div class="segment-item">Caravans &amp; recreational vehicles</div>
+                </div>
+            </div>
+
+            <div class="cta-strip">
+                <h2>Looking for Proven Vehicle Component Solutions?</h2>
+                <p>Qmontt can support your requirements for automotive electronics, safety systems, displays, charging solutions, and cooling technologies for European markets.</p>
+                <a href="contact.html" class="btn-white">Request a Quote</a>
+            </div>
+        </div>
+    </section>
+
+    <div id="site-footer"></div>
+
+    <script src="script.js"></script>
+    <script src="image-gallery.js"></script>
+</body>
+</html>
