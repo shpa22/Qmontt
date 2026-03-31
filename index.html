@@ -95,16 +95,16 @@
         }
 
         .visual-card {
-            position: relative;
-            overflow: hidden;
-            border-radius: 22px;
-            text-decoration: none;
-            color: white;
-            display: block;
-            min-height: 220px;
-            box-shadow: 0 14px 30px rgba(14,30,60,0.12);
-            transition: transform 0.35s ease, box-shadow 0.35s ease;
-        }
+    position: relative;
+    overflow: hidden;
+    border-radius: 22px;
+    text-decoration: none;
+    color: white;
+    display: block;
+    min-height: 320px;
+    box-shadow: 0 14px 30px rgba(14,30,60,0.12);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
 
         .visual-card:hover {
             transform: translateY(-6px);
@@ -384,23 +384,48 @@
         }
 
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.7rem;
-            }
+    .hero h1 {
+        font-size: 2.7rem;
+    }
 
-            .intro-panel,
-            .cta-panel,
-            .contact-home-card,
-            .contact-home-side {
-                padding: 2rem;
-            }
+    .intro-panel,
+    .cta-panel,
+    .contact-home-card,
+    .contact-home-side {
+        padding: 2rem;
+    }
 
-            .products-visual-grid,
-            .industries-visual-grid,
-            .process-grid-home {
-                grid-template-columns: 1fr;
-            }
-        }
+    .products-visual-grid,
+    .industries-visual-grid,
+    .process-grid-home {
+        grid-template-columns: 1fr;
+    }
+
+    .visual-card,
+    .visual-card.large {
+        min-height: 420px;
+    }
+
+    .visual-card .content {
+        padding: 1.5rem;
+    }
+
+    .visual-card .tag {
+        font-size: 0.72rem;
+        margin-bottom: 0.7rem;
+    }
+
+    .visual-card h3 {
+        font-size: 2rem;
+        line-height: 1.15;
+    }
+
+    .visual-card p {
+        font-size: 1rem;
+        line-height: 1.65;
+        max-width: 100%;
+    }
+}
     </style>
 </head>
 <body>
