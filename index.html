@@ -87,12 +87,13 @@
         }
 
         .products-visual-grid {
-            display: grid;
-            grid-template-columns: 1.25fr 1fr 1fr;
-            grid-template-rows: 280px 260px;
-            gap: 1.4rem;
-            margin-top: 2.5rem;
-        }
+    display: grid;
+    grid-template-columns: 1.25fr 1fr 1fr;
+    grid-auto-rows: minmax(320px, auto);
+    gap: 1.4rem;
+    margin-top: 2.5rem;
+    align-items: stretch;
+}
 
         .visual-card {
     position: relative;
