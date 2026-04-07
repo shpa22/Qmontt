@@ -772,3 +772,40 @@ iframe {
 .contact-home-grid > div {
     height: 100% !important;
 }
+.global-map {
+  padding: 5rem 0;
+  background: #f8fafc;
+  text-align: center;
+}
+
+.map-wrapper {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.map-svg {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
+}
+
+.dot {
+  fill: #3b82f6;
+  filter: drop-shadow(0 0 6px rgba(59,130,246,0.6));
+}
+
+/* animated lines */
+.route {
+  fill: none;
+  stroke: #3b82f6;
+  stroke-width: 2;
+  stroke-dasharray: 6 6;
+  animation: moveLine 3s linear infinite;
+}
+
+/* animation */
+@keyframes moveLine {
+  to {
+    stroke-dashoffset: -12;
+  }
+}
